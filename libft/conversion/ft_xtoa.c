@@ -6,7 +6,7 @@
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 23:46:42 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/19 22:11:40 by sombru           ###   ########.fr       */
+/*   Updated: 2025/06/21 15:25:54 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,22 @@ static int	ft_xlen(unsigned int x)
 	return (i);
 }
 
-static const char *get_hex_digits(int *upper)
+static const char	*get_hex_digits(int *upper)
 {
 	if (upper && *upper)
-		return "0123456789ABCDEF";
+		return ("0123456789ABCDEF");
 	else
-		return "0123456789abcdef";
+		return ("0123456789abcdef");
 }
 
 // function converts x into hexadecimal string
 // casing is specified by upper flag
-char *ft_xtoa(unsigned int x, int upper)
+char	*ft_xtoa(unsigned int x, int upper)
 {
-	char *result;
-	const char *digits;
-	int len;
-	
+	char		*result;
+	const char	*digits;
+	int			len;
+
 	if (!x)
 		return (ft_strdup("0"));
 	len = ft_xlen(x);

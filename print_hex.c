@@ -6,17 +6,17 @@
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 12:03:34 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/20 12:24:21 by sombru           ###   ########.fr       */
+/*   Updated: 2025/06/21 15:04:18 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_hex(t_format *f, unsigned int arg, int upper)
+int	print_hex(t_format *f, unsigned int arg, int upper)
 {
-	char *hex;
-	int count;
-	int len;
+	char	*hex;
+	int		count;
+	int		len;
 
 	count = 0;
 	hex = ft_xtoa(arg, upper);

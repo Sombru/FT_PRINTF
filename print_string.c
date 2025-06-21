@@ -6,22 +6,30 @@
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:59:14 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/20 16:48:36 by sombru           ###   ########.fr       */
+/*   Updated: 2025/06/21 15:00:15 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int print_string(t_format *f, const char *arg)
+static const char	*get_string(const char *arg)
 {
-	int count;
-	int len;
-	const char *str; 
+	const char	*str;
 
 	if (arg)
 		str = arg;
 	else
 		str = "(null)";
+	return (str);
+}
+
+int	print_string(t_format *f, const char *arg)
+{
+	int			count;
+	int			len;
+	const char	*str;
+
+	str = get_string(arg);
 	count = 0;
 	len = ft_strlen(str);
 	if (f->default_ && f->field_witdh && !f->dot)

@@ -6,7 +6,7 @@
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 17:24:11 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/20 14:46:31 by sombru           ###   ########.fr       */
+/*   Updated: 2025/06/21 15:05:59 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_itoa_printf(unsigned int n, int *out_nbr_len)
 	if (!n)
 	{
 		*out_nbr_len = 1;
-		return(ft_strdup("0"));
+		return (ft_strdup("0"));
 	}
 	len = ft_nbrlen(n);
 	*out_nbr_len = len;
@@ -47,9 +47,9 @@ char	*ft_itoa_printf(unsigned int n, int *out_nbr_len)
 	return (str);
 }
 
-static int resolve_digit_sign(t_format *f, int *is_negative, int *len)
+static int	resolve_digit_sign(t_format *f, int *is_negative, int *len)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (f->zero || *is_negative || f->plus)
@@ -67,13 +67,14 @@ static int resolve_digit_sign(t_format *f, int *is_negative, int *len)
 	}
 	return (count);
 }
+
 // Enough for -2147483648\0
-int print_digit(t_format *f, int arg)
+int	print_digit(t_format *f, int arg)
 {
-	char *result;
-	int count;
-	int len;
-	int is_negative;
+	char	*result;
+	int		count;
+	int		len;
+	int		is_negative;
 
 	count = 0;
 	is_negative = 0;
@@ -94,8 +95,7 @@ int print_digit(t_format *f, int arg)
 	count += write(1, result, ft_strlen(result));
 	if (f->minus && f->field_witdh)
 		count += apply_format(f, len);
-	free(result);
-	return (count);
+	return (free(result), count);
 }
 
 // int main()

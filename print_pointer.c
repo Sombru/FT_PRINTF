@@ -5,22 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/13 16:40:06 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/19 22:29:52 by sombru           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_xtoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 23:46:42 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/19 00:17:26 by sombru           ###   ########.fr       */
+/*   Created: 2025/06/21 15:02:12 by sombru            #+#    #+#             */
+/*   Updated: 2025/06/21 15:03:55 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +25,20 @@ static int	ft_xlenl(unsigned long x)
 	return (i);
 }
 
-static const char *get_hex_digits(int *upper)
+static const char	*get_hex_digits(int *upper)
 {
 	if (upper && *upper)
-		return "0123456789ABCDEF";
+		return ("0123456789ABCDEF");
 	else
-		return "0123456789abcdef";
+		return ("0123456789abcdef");
 }
 
-static char *ft_xtoal(unsigned long x, int upper)
+static char	*ft_xtoal(unsigned long x, int upper)
 {
-	char *result;
-	const char *digits;
-	int len;
-	
+	char		*result;
+	const char	*digits;
+	int			len;
+
 	if (!x)
 		return (ft_strdup("0"));
 	len = ft_xlenl(x);
@@ -67,11 +53,11 @@ static char *ft_xtoal(unsigned long x, int upper)
 	return (result);
 }
 
-static int print_hexl(t_format *f, unsigned long arg, int upper)
+static int	print_hexl(t_format *f, unsigned long arg, int upper)
 {
-	char *hex;
-	int count;
-	int len;
+	char	*hex;
+	int		count;
+	int		len;
 
 	count = 0;
 	if (arg)
@@ -96,9 +82,9 @@ static int print_hexl(t_format *f, unsigned long arg, int upper)
 	return (count);
 }
 
-int print_pointer(t_format *f, void *ptr)
+int	print_pointer(t_format *f, void *ptr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	f->hash = 1;

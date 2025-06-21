@@ -6,7 +6,7 @@
 /*   By: sombru <sombru@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 12:00:00 by sombru            #+#    #+#             */
-/*   Updated: 2025/06/19 22:58:13 by sombru           ###   ########.fr       */
+/*   Updated: 2025/06/21 15:01:48 by sombru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ char	*ft_uitoa_printf(unsigned int n, int *out_nbr_len)
 }
 
 // Enough for -2147483648\0
-int print_unsigned(t_format *f, unsigned int arg)
+int	print_unsigned(t_format *f, unsigned int arg)
 {
-	char *result;
-	int count;
-	int len;
+	char	*result;
+	int		count;
+	int		len;
 
 	count = 0;
 	result = ft_uitoa_printf(arg, &len);
@@ -63,7 +63,3 @@ int print_unsigned(t_format *f, unsigned int arg)
 	free(result);
 	return (count);
 }
-// int main()
-// {
-// 	print_digit(NULL, 45);
-// }
